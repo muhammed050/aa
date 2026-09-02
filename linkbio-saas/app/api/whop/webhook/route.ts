@@ -1,0 +1,2 @@
+import {NextResponse} from "next/server";
+export async function POST(req:Request){const secret=process.env.WHOP_WEBHOOK_SECRET;if(!secret)return NextResponse.json({error:"Billing not configured"},{status:503});const signature=req.headers.get("x-whop-signature");const raw=await req.text();if(!signature)return NextResponse.json({error:"Missing signature"},{status:401});return NextResponse.json({received:true});}
