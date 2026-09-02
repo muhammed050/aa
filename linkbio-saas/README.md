@@ -26,4 +26,5 @@ Apply `supabase/migrations` in order. Provider credentials are intentionally not
 ## Verify
 `npm install`
 `npm run lint`
+`npm test`
 `npm run build`
