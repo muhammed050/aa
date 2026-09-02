@@ -1,0 +1,2 @@
+import {redirect} from "next/navigation";import {currentUser} from "@/lib/data";
+export default async function Products(){if(!await currentUser())redirect("/login");return <main className="container py-8"><h1 className="text-3xl font-black">المنتجات / المتجر</h1><div className="card p-8 mt-6"><p className="muted">إدارة المنتجات جاهزة للربط بجدول products وإظهارها داخل أقسام الصفحة.</p><p className="mt-3">الحقول المدعومة: الاسم، الوصف، السعر، العملة، الصور، SKU، المخزون، التصنيف، واتساب، نشط، مميز.</p></div></main>}

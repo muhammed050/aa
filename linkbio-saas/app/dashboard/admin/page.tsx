@@ -1,0 +1,2 @@
+import {redirect} from "next/navigation";import {currentUser} from "@/lib/data";
+export default async function Admin(){const u=await currentUser();if(!u)redirect("/login");return <main className="container py-8"><h1 className="text-3xl font-black">Admin</h1><div className="card p-6 mt-6"><p>الإدارة محمية بـ RLS. لإدارة المنصة، عيّن role=admin في profiles عبر بيئة موثوقة.</p><p className="muted mt-2">المهام: المستخدمون، الصفحات، البلاغات، التعطيل، الإحصائيات.</p></div></main>}

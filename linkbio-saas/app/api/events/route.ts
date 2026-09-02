@@ -1,0 +1,2 @@
+import {createClient} from "@/lib/supabase/server";import {NextResponse} from "next/server";
+export async function POST(req:Request){const b=await req.json();const s=await createClient();const ua=req.headers.get("user-agent")||"";const ref=req.headers.get("referer")||null;await s.from("analytics_events").insert({page_id:b.pageId,section_id:b.sectionId||null,event_type:b.type||"page_view",target:String(b.target||""),referrer:ref,user_agent:ua});return NextResponse.json({ok:true})}
